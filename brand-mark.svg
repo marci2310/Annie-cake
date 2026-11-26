@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
+  <circle cx="80" cy="80" r="75" fill="#F4A3B8" stroke="#FFFFFF" stroke-width="6"/>
+  <circle cx="80" cy="80" r="68" fill="none" stroke="#D66386" stroke-width="2"/>
+  <text x="80" y="74" fill="#FFFFFF" font-family="Georgia,serif" font-size="28" text-anchor="middle">ACS</text>
+  <text x="80" y="101" fill="#FFFFFF" font-family="Arial,sans-serif" font-size="10" letter-spacing="2" text-anchor="middle">ANNIE CAKE SHOP</text>
+</svg>
