@@ -2,7 +2,8 @@ const STORE_CONFIG = {
   phoneDisplay: '(81) 99680-3230',
   phoneDigits: '5581996803230',
   instagramUrl: 'https://www.instagram.com/anniecakeshop/',
-  rappiUrl: 'https://www.rappi.com.br/',
+  cardapioWebUrl: 'https://app.cardapioweb.com/anniecakeshop',
+  ifoodUrl: 'https://www.ifood.com.br/delivery/jaboatao-dos-guararapes-pe/annie-cake-shop-piedade-piedade/25b638b0-333a-4cb1-9f01-446eb66b88ee',
   googleReviewUrl: 'https://search.google.com/local/writereview?placeid=ChIJwei9JsbhqgcRpum7amTFgXA',
   mapsUrl: 'https://maps.app.goo.gl/1DZePw4N8cyt5A679',
   routeUrl: 'https://www.google.com/maps/dir/?api=1&destination=R.%20Jo%C3%A3o%20Dourado%20Filho%2C%201131%2C%20Piedade%2C%20Jaboat%C3%A3o%20dos%20Guararapes%2C%20PE',
@@ -31,7 +32,8 @@ function setConfiguredLinks() {
     link.rel = 'noreferrer';
   });
   document.querySelectorAll('[data-phone]').forEach((link) => { link.href = `tel:+${STORE_CONFIG.phoneDigits}`; });
-  document.querySelectorAll('[data-rappi]').forEach((link) => { link.href = STORE_CONFIG.rappiUrl; link.target = '_blank'; link.rel = 'noreferrer'; });
+  document.querySelectorAll('[data-order]').forEach((link) => { link.href = STORE_CONFIG.cardapioWebUrl; link.target = '_blank'; link.rel = 'noreferrer'; });
+  document.querySelectorAll('[data-ifood]').forEach((link) => { link.href = STORE_CONFIG.ifoodUrl; link.target = '_blank'; link.rel = 'noreferrer'; });
   document.querySelectorAll('[data-google-review]').forEach((link) => { link.href = STORE_CONFIG.googleReviewUrl; link.target = '_blank'; link.rel = 'noreferrer'; });
   document.querySelectorAll('[data-maps]').forEach((link) => { link.href = STORE_CONFIG.mapsUrl; link.target = '_blank'; link.rel = 'noreferrer'; });
   document.querySelectorAll('[data-route]').forEach((link) => { link.href = STORE_CONFIG.routeUrl; link.target = '_blank'; link.rel = 'noreferrer'; });
@@ -51,15 +53,6 @@ function renderOpenStatus() {
   const { isOpen, schedule } = getOpenStatus();
   status.dataset.state = isOpen ? 'open' : 'closed';
   status.querySelector('.status-text').textContent = isOpen ? `Aberto agora · até ${schedule.close}h` : `Fechado agora · abre às ${schedule.open}h`;
-}
-
-const cart = new Map();
-const cleanName = (name) => name.replace(/^\[exemplo\]\s*/i, '');
-
-function stepperHTML(qty) {
-  return qty
-    ? `<div class="stepper"><button type="button" data-dec aria-label="Remover um">−</button><output>${qty}</output><button type="button" data-inc aria-label="Adicionar mais um">+</button></div>`
-    : `<button class="menu-add" type="button" data-inc>Adicionar <span aria-hidden="true">+</span></button>`;
 }
 
 function renderMenu() {
@@ -94,10 +87,8 @@ function renderMenuItems(gi) {
   const grid = document.querySelector('#menu-grid');
   const group = MENU_DATA[gi];
   if (!grid || !group) return;
-  grid.innerHTML = group.items.map((item, i) => {
-    const qty = cart.get(`${gi}|${i}`)?.qty || 0;
-    return `
-    <article class="menu-card${qty ? ' in-cart' : ''}" style="--i:${i}" data-g="${gi}" data-i="${i}">
+  grid.innerHTML = group.items.map((item, i) => `
+    <article class="menu-card" style="--i:${i}">
       <div class="menu-card-image">
         <img src="${item.image}" alt="${item.alt}" loading="lazy" />
         ${item.isExample ? '<span class="menu-badge">[exemplo]</span>' : ''}
@@ -105,58 +96,9 @@ function renderMenuItems(gi) {
       <div class="menu-card-body">
         <h3>${item.name}</h3>
         <p>${item.description}</p>
-        <div class="menu-card-foot"><span class="menu-price">${item.price}</span>${stepperHTML(qty)}</div>
+        <div class="menu-card-foot"><span class="menu-price">${item.price}</span><a class="menu-add" href="${STORE_CONFIG.cardapioWebUrl}" target="_blank" rel="noreferrer">Pedir online <span aria-hidden="true">↗</span></a></div>
       </div>
-    </article>`;
-  }).join('');
-}
-
-function updateCartBar() {
-  const bar = document.querySelector('#cart-bar');
-  if (!bar) return;
-  const entries = [...cart.values()];
-  const total = entries.reduce((sum, e) => sum + e.qty, 0);
-  bar.hidden = total === 0;
-  document.body.classList.toggle('has-cart', total > 0);
-  const count = bar.querySelector('#cart-count');
-  count.textContent = total;
-  count.classList.remove('bump'); void count.offsetWidth; count.classList.add('bump');
-  bar.querySelector('#cart-list').innerHTML = entries.map((e) => `<li><span>${e.qty}×</span> ${e.name}<small>${e.category}</small></li>`).join('');
-  const lines = entries.map((e) => `• ${e.qty}x ${e.name} (${e.category})`).join('\n');
-  bar.querySelector('#cart-send').href = whatsappLink(`Olá! Vim pelo site e gostaria de fazer este pedido:\n\n${lines}\n\nPode confirmar disponibilidade e valores?`);
-  if (total === 0) { bar.classList.remove('is-open'); bar.querySelector('#cart-toggle').setAttribute('aria-expanded', 'false'); }
-}
-
-function setupCart() {
-  const grid = document.querySelector('#menu-grid');
-  const bar = document.querySelector('#cart-bar');
-  if (!grid || !bar) return;
-  grid.addEventListener('click', (e) => {
-    const btn = e.target.closest('[data-inc], [data-dec]');
-    if (!btn) return;
-    const card = btn.closest('.menu-card');
-    const { g, i } = card.dataset;
-    const group = MENU_DATA[g];
-    const key = `${g}|${i}`;
-    const entry = cart.get(key) || { name: cleanName(group.items[i].name), category: group.category, qty: 0 };
-    entry.qty += btn.hasAttribute('data-inc') ? 1 : -1;
-    if (entry.qty > 0) cart.set(key, entry); else cart.delete(key);
-    const foot = card.querySelector('.menu-card-foot');
-    foot.lastElementChild.remove();
-    foot.insertAdjacentHTML('beforeend', stepperHTML(Math.max(entry.qty, 0)));
-    foot.querySelector('[data-inc]').focus();
-    card.classList.toggle('in-cart', entry.qty > 0);
-    updateCartBar();
-  });
-  bar.querySelector('#cart-toggle').addEventListener('click', (e) => {
-    e.currentTarget.setAttribute('aria-expanded', String(bar.classList.toggle('is-open')));
-  });
-  bar.querySelector('#cart-clear').addEventListener('click', () => {
-    cart.clear();
-    const current = [...document.querySelectorAll('.menu-tab')].findIndex((t) => t.getAttribute('aria-selected') === 'true');
-    renderMenuItems(Math.max(current, 0));
-    updateCartBar();
-  });
+    </article>`).join('');
 }
 
 function setupScrollUI() {
@@ -304,7 +246,6 @@ function init() {
   addLocalBusinessSchema();
   document.querySelector('#current-year').textContent = new Date().getFullYear();
   setupReveal();
-  setupCart();
   setupScrollUI();
   setupHeroTilt();
   setupLightbox();

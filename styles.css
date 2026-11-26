@@ -366,32 +366,11 @@ h1 em, h2 em { color: var(--pink-dark); font-style: italic; }
 
 .menu-card { animation: cardIn .5s cubic-bezier(.2, .7, .2, 1) both; animation-delay: calc(var(--i, 0) * 80ms); }
 @keyframes cardIn { from { opacity: 0; transform: translateY(16px) scale(.97); } }
-.menu-card.in-cart { border-color: var(--pink-dark); box-shadow: 0 0 0 2px rgba(214, 99, 134, .18); }
-.menu-add { display: inline-flex; align-items: center; gap: 7px; padding: 7px 13px; border: 1px solid var(--pink-dark); border-radius: 100px; color: var(--pink-deep); background: transparent; cursor: pointer; font-size: 11px; font-weight: 600; transition: background .2s ease, color .2s ease; }
+.menu-add { text-decoration: none; display: inline-flex; align-items: center; gap: 7px; padding: 7px 13px; border: 1px solid var(--pink-dark); border-radius: 100px; color: var(--pink-deep); background: transparent; cursor: pointer; font-size: 11px; font-weight: 600; transition: background .2s ease, color .2s ease; }
 .menu-add:hover { color: var(--white); background: var(--pink-dark); }
-.stepper { display: inline-flex; align-items: center; border: 1px solid var(--pink-dark); border-radius: 100px; overflow: hidden; }
-.stepper button { width: 32px; height: 30px; border: 0; color: var(--pink-deep); background: transparent; cursor: pointer; font-size: 17px; }
-.stepper button:hover { background: var(--pink-soft); }
-.stepper output { min-width: 22px; font-family: var(--mono); font-size: 11px; text-align: center; }
 .order-icon { transition: transform .3s ease; }
 .order-card:hover .order-icon { transform: rotate(-12deg) scale(1.1); }
 
-.cart-bar { position: fixed; z-index: 25; bottom: 18px; left: 50%; display: grid; grid-template-columns: 1fr auto auto; gap: 10px; align-items: center; width: min(580px, calc(100% - 28px)); padding: 10px 10px 10px 16px; border-radius: 24px; color: var(--white); background: var(--ink); box-shadow: 0 18px 50px rgba(70, 40, 45, .4); translate: -50% 0; animation: rise .35s ease; }
-.cart-bar[hidden] { display: none; }
-@keyframes rise { from { opacity: 0; transform: translateY(20px); } }
-.cart-summary { display: inline-flex; align-items: center; gap: 10px; padding: 0; border: 0; color: inherit; background: none; cursor: pointer; font-size: 12px; font-weight: 600; text-align: left; }
-.cart-count { display: grid; place-items: center; min-width: 28px; height: 28px; border-radius: 50%; color: var(--ink); background: var(--pink); font-family: var(--mono); font-size: 12px; }
-.cart-count.bump { animation: bump .35s ease; }
-@keyframes bump { 40% { transform: scale(1.35); } }
-.cart-clear { padding: 8px; border: 0; color: rgba(255, 255, 255, .65); background: none; cursor: pointer; font-size: 11px; }
-.cart-clear:hover { color: var(--white); }
-.cart-list { order: -1; display: none; grid-column: 1 / -1; max-height: 34vh; margin: 0; padding: 4px 4px 8px; overflow: auto; list-style: none; border-bottom: 1px solid rgba(255, 255, 255, .15); font-size: 12px; }
-.cart-bar.is-open .cart-list { display: block; }
-.cart-list li { padding: 5px 0; }
-.cart-list span { margin-right: 4px; color: var(--pink); font-family: var(--mono); }
-.cart-list small { margin-left: 8px; color: rgba(255, 255, 255, .5); font-size: 10px; }
-.has-cart .floating-whatsapp { display: none; }
-.has-cart .site-footer { padding-bottom: 100px; }
 
 .gallery-item { cursor: zoom-in; }
 .lightbox { width: min(920px, 94vw); max-height: 92vh; padding: 0; border: 0; background: transparent; overflow: visible; }
@@ -406,10 +385,11 @@ h1 em, h2 em { color: var(--pink-dark); font-style: italic; }
 
 @media (max-width: 760px) {
   .marquee { font-size: 17px; }
-  .cart-bar { grid-template-columns: 1fr auto; bottom: 12px; }
-  .cart-clear { display: none; }
-  .cart-bar.is-open .cart-clear { display: block; grid-column: 1 / -1; justify-self: end; order: -1; }
 }
 @media (prefers-reduced-motion: reduce) {
   .marquee-track, .hero-scribble, .hero-sticker, .menu-card { animation: none; }
 }
+
+.order-grid { grid-template-columns: 1.3fr 1fr 1fr 1fr; }
+@media (max-width: 1000px) { .order-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 760px) { .order-grid { grid-template-columns: 1fr; } }

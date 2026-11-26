@@ -38,7 +38,7 @@ As imagens atuais são demonstrativas e carregadas de URLs públicas do Unsplash
 
 ## Interatividade (versão revisada)
 
-- **Monte seu pedido:** cada item do cardápio tem “Adicionar” com contador; a barra fixa no rodapé junta tudo e envia uma mensagem única pelo WhatsApp.
+- **Pedido online:** botões levam ao cardápio online (CardápioWeb) e ao iFood; o WhatsApp fica para encomendas e dúvidas. Links em `STORE_CONFIG` no `app.js`.
 - **Cabeçalho vivo:** barra de progresso de rolagem, sombra ao rolar e destaque do menu conforme a seção visível.
 - **Hero:** a foto inclina de leve com o mouse; o selo e a estrela têm movimento sutil. Faixa em rolagem com as categorias da casa.
 - **Galeria:** clique para ampliar, com setas e teclado (← → Esc).

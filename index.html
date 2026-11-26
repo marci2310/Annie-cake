@@ -38,7 +38,7 @@
           <a href="#como-pedir">Como pedir</a>
           <a href="#sobre">Sobre a Annie</a>
           <a href="#galeria">Galeria</a>
-          <a class="nav-cta" data-whatsapp data-message="Olá! Vim pelo site e gostaria de fazer um pedido." href="#">Pedir agora <span aria-hidden="true">↗</span></a>
+          <a class="nav-cta" data-order href="#">Pedir agora <span aria-hidden="true">↗</span></a>
         </nav>
       </div>
     </header>
@@ -51,7 +51,7 @@
             <h1 id="hero-title">Uma experiência <em>única</em> em cada doce.</h1>
             <p class="hero-lede">Tortas, doces e momentos gostosos para dividir — ou guardar só para você. Entre, fique à vontade e escolha seu próximo carinho em forma de sobremesa.</p>
             <div class="hero-actions">
-              <a class="button button-primary" data-whatsapp data-message="Olá! Vim pelo site e gostaria de pedir na Annie Cake Shop." href="#">Pedir no WhatsApp <span aria-hidden="true">↗</span></a>
+              <a class="button button-primary" data-order href="#">Peça online <span aria-hidden="true">↗</span></a>
               <a class="button button-quiet" href="#cardapio">Ver cardápio <span aria-hidden="true">↓</span></a>
             </div>
             <div class="hero-meta">
@@ -100,9 +100,10 @@
         <div class="container">
           <div class="section-heading centered reveal"><div class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> do seu jeito</div><h2 id="order-title">Como pedir sua <em>dose de carinho</em></h2><p>Escolha o caminho mais gostoso para receber a Annie Cake Shop.</p></div>
           <div class="order-grid">
-            <a class="order-card order-card-main reveal" data-whatsapp data-message="Olá! Vim pelo site e gostaria de pedir na Annie Cake Shop." href="#"><span class="order-number">01</span><span class="order-icon">↗</span><h3>Peça pelo WhatsApp</h3><p>Fale com a gente, tire suas dúvidas e combine cada detalhe do pedido.</p><span class="order-link">Abrir conversa <span aria-hidden="true">→</span></span></a>
-            <a class="order-card reveal reveal-delay" data-rappi href="#"><span class="order-number">02</span><span class="order-icon">✣</span><h3>Peça no Rappi</h3><p>Consulte a disponibilidade de delivery pela plataforma.</p><span class="order-link">Ver no Rappi <span aria-hidden="true">→</span></span></a>
-            <a class="order-card reveal reveal-delay-2" data-phone href="#"><span class="order-number">03</span><span class="order-icon">⌕</span><h3>Ligue para a loja</h3><p>Prefere conversar? Nosso time está pronto para te atender.</p><span class="order-link">(81) 99680-3230 <span aria-hidden="true">→</span></span></a>
+            <a class="order-card order-card-main reveal" data-order href="#"><span class="order-number">01</span><span class="order-icon">↗</span><h3>Peça online</h3><p>Monte sua sacola no cardápio online, com entrega e programa de cashback.</p><span class="order-link">Abrir cardápio <span aria-hidden="true">→</span></span></a>
+            <a class="order-card reveal reveal-delay" data-ifood href="#"><span class="order-number">02</span><span class="order-icon">✣</span><h3>Peça no iFood</h3><p>Prefere o app de sempre? Peça a entrega direto pelo iFood.</p><span class="order-link">Ver no iFood <span aria-hidden="true">→</span></span></a>
+            <a class="order-card reveal reveal-delay-2" data-whatsapp data-message="Olá! Vim pelo site e gostaria de fazer uma encomenda na Annie Cake Shop." href="#"><span class="order-number">03</span><span class="order-icon">◔</span><h3>Encomendas e dúvidas</h3><p>Bolos, kits festa e pedidos sob medida: fale direto com a gente.</p><span class="order-link">Abrir conversa <span aria-hidden="true">→</span></span></a>
+            <a class="order-card reveal reveal-delay-2" data-phone href="#"><span class="order-number">04</span><span class="order-icon">⌕</span><h3>Ligue para a loja</h3><p>Prefere conversar? Nosso time está pronto para te atender.</p><span class="order-link">(81) 99680-3230 <span aria-hidden="true">→</span></span></a>
           </div>
         </div>
       </section>
@@ -157,13 +158,7 @@
       <div class="container footer-bottom"><span>© <span id="current-year"></span> Annie Cake Shop. Todos os direitos reservados.</span><span>feito com açúcar, afeto e café</span></div>
     </footer>
 
-    <a class="floating-whatsapp" data-whatsapp data-message="Olá! Vim pelo site e gostaria de pedir na Annie Cake Shop." href="#" aria-label="Pedir pelo WhatsApp"><span aria-hidden="true">◔</span><span>pedir agora</span></a>
-    <div class="cart-bar" id="cart-bar" hidden>
-      <ul class="cart-list" id="cart-list" aria-label="Itens do pedido"></ul>
-      <button class="cart-summary" type="button" id="cart-toggle" aria-expanded="false"><span class="cart-count" id="cart-count">0</span><span>Seu pedido <span aria-hidden="true">▴</span></span></button>
-      <button class="cart-clear" type="button" id="cart-clear">Limpar</button>
-      <a class="button button-primary button-small" id="cart-send" href="#" target="_blank" rel="noreferrer">Enviar no WhatsApp <span aria-hidden="true">↗</span></a>
-    </div>
+    <a class="floating-whatsapp" data-whatsapp data-message="Olá! Vim pelo site e gostaria de falar com a Annie Cake Shop." href="#" aria-label="Falar pelo WhatsApp"><span aria-hidden="true">◔</span><span>fale conosco</span></a>
     <dialog class="lightbox" id="lightbox" aria-label="Foto ampliada"><figure><img alt="" /><figcaption></figcaption></figure><button type="button" class="lb-btn lb-close" data-close aria-label="Fechar">×</button><button type="button" class="lb-btn lb-prev" data-prev aria-label="Foto anterior">‹</button><button type="button" class="lb-btn lb-next" data-next aria-label="Próxima foto">›</button></dialog>
     <script src="menu-data.js"></script>
     <script src="app.js"></script>
