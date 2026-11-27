@@ -393,3 +393,29 @@ h1 em, h2 em { color: var(--pink-dark); font-style: italic; }
 .order-grid { grid-template-columns: 1.3fr 1fr 1fr 1fr; }
 @media (max-width: 1000px) { .order-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 760px) { .order-grid { grid-template-columns: 1fr; } }
+
+.brand-logo { width: 58px; height: 58px; border: 2px solid var(--white); border-radius: 50%; outline: 1px solid var(--pink-dark); object-fit: cover; transition: transform .3s ease; }
+.brand:hover .brand-logo { transform: rotate(-8deg) scale(1.06); }
+@media (max-width: 760px) { .brand-logo { width: 48px; height: 48px; } }
+
+.ico { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.trust-icon .ico { width: 28px; height: 28px; }
+.order-icon .ico { width: 22px; height: 22px; }
+.floating-whatsapp .ico { width: 18px; height: 18px; }
+.menu-card { animation: none; }
+.menu-footnote { display: flex; justify-content: center; }
+.reviews-solo { max-width: 640px; text-align: center; }
+.reviews-solo .eyebrow { justify-content: center; }
+.reviews-solo p { margin: 16px auto 28px; }
+
+.menu-list { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.menu-item { display: grid; grid-template-columns: 1fr 104px; gap: 14px; padding: 14px; border: 1px solid rgba(95, 48, 57, .12); border-radius: 16px; background: var(--white); animation: cardIn .45s cubic-bezier(.2, .7, .2, 1) both; animation-delay: calc(var(--i, 0) * 45ms); transition: transform .25s ease, box-shadow .25s ease; }
+.menu-item:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+.menu-item img { align-self: start; width: 104px; height: 104px; border-radius: 12px; object-fit: cover; background: var(--pink-soft); }
+.menu-item-text { display: flex; flex-direction: column; min-width: 0; }
+.menu-item h3 { margin: 6px 0 4px; font-size: 16px; line-height: 1.25; }
+.menu-item p { margin: 0 0 12px; font-size: 13px; line-height: 1.5; opacity: .72; }
+.menu-item .menu-badge { position: static; align-self: flex-start; }
+.menu-item-foot { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; justify-content: space-between; margin-top: auto; }
+@media (max-width: 760px) { .menu-list { grid-template-columns: 1fr; } .menu-item { grid-template-columns: 1fr 92px; } .menu-item img { width: 92px; height: 92px; } }
+@media (prefers-reduced-motion: reduce) { .menu-item { animation: none; } }

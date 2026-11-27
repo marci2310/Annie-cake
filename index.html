@@ -16,11 +16,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="icon" href="brand-mark.svg" type="image/svg+xml" />
+    <link rel="icon" href="logo-annie.png" type="image/png" />
     <link rel="stylesheet" href="styles.css" />
     <script type="application/ld+json" id="local-business-schema"></script>
   </head>
   <body>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 17v4M17 19h4"/></symbol>
+<symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></symbol>
+<symbol id="i-gift" viewBox="0 0 24 24"><rect x="3" y="9" width="18" height="11" rx="1"/><path d="M12 9v11M3 13h18M12 9C10 5 6 6 7 9c.5 1.500 3 1 5 0zm0 0c2-4 6-3 5 0-.5 1.500-3 1-5 0z"/></symbol>
+<symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6z"/><path d="M9 8a3 3 0 016 0"/></symbol>
+<symbol id="i-bike" viewBox="0 0 24 24"><circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/><path d="M6 17h5l3-7h3M14 10h-4"/></symbol>
+<symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></symbol>
+</defs></svg>
     <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
     <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
     <div class="topline"><span>feito com carinho em Piedade</span><span class="topline-dot" aria-hidden="true"></span><span>delivery e loja física</span></div>
@@ -29,8 +38,7 @@
       <div class="container nav-wrap">
         <a class="brand" href="#inicio" aria-label="Annie Cake Shop, voltar ao início">
           <!-- Área reservada: substitua este círculo pela logo oficial quando ela estiver disponível. -->
-          <span class="brand-mark" aria-hidden="true"><span>ACS</span></span>
-          <span class="brand-copy"><strong>ANNIE</strong><small>CAKE SHOP</small></span>
+          <img class="brand-logo" src="logo-annie.png" alt="Annie Cake Shop" width="58" height="58" />
         </a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span><span class="sr-only">Abrir menu</span></button>
         <nav class="site-nav" id="site-nav" aria-label="Navegação principal">
@@ -60,26 +68,25 @@
               <span>Rua João Dourado Filho, 1131 · Piedade</span>
             </div>
           </div>
-          <div class="hero-visual reveal reveal-delay" aria-label="Foto demonstrativa de doces da Annie Cake Shop">
+          <div class="hero-visual reveal reveal-delay" aria-label="Picolé trufado da Annie Cake Shop">
             <div class="hero-awning" aria-hidden="true"></div>
             <div class="hero-image-frame">
-              <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=1100&q=85" alt="Donuts coloridos em uma caixa, imagem demonstrativa" fetchpriority="high" />
-              <span class="image-note">imagem demonstrativa</span>
+              <img src="img/picole-coco.jpg" alt="Picolé trufado de coco cortado ao meio, mostrando o recheio cremoso" fetchpriority="high" />
             </div>
-            <div class="hero-sticker"><span>feito</span><strong>com amor</strong><span>♡ annie</span></div>
-            <div class="hero-caption"><span>doces que contam histórias</span><span aria-hidden="true">✦</span></div>
+            <div class="hero-sticker"><span>feito</span><strong>com amor</strong><span><svg class="ico" aria-hidden="true"><use href="#i-heart"/></svg> annie</span></div>
+            <div class="hero-caption"><span>doces que contam histórias</span><span aria-hidden="true">•</span></div>
           </div>
         </div>
-        <div class="hero-scribble" aria-hidden="true">✳</div>
+        <div class="hero-scribble" aria-hidden="true"><svg class="ico" aria-hidden="true"><use href="#i-sparkle"/></svg></div>
       </section>
 
-      <div class="marquee" aria-hidden="true"><div class="marquee-track"><span>Tortas</span><span>✦</span><span>Brownies</span><span>✦</span><span>Bolos no pote</span><span>✦</span><span>Annie Truffé</span><span>✦</span><span>Salgados</span><span>✦</span><span>Cafés</span><span>✦</span><span>Kits festa</span><span>✦</span><span>Tortas</span><span>✦</span><span>Brownies</span><span>✦</span><span>Bolos no pote</span><span>✦</span><span>Annie Truffé</span><span>✦</span><span>Salgados</span><span>✦</span><span>Cafés</span><span>✦</span><span>Kits festa</span><span>✦</span></div></div>
+      <div class="marquee" aria-hidden="true"><div class="marquee-track"><span>Tortas</span><span>•</span><span>Brownies</span><span>•</span><span>Bolos no pote</span><span>•</span><span>Annie Truffé</span><span>•</span><span>Salgados</span><span>•</span><span>Cafés</span><span>•</span><span>Kits festa</span><span>•</span><span>Tortas</span><span>•</span><span>Brownies</span><span>•</span><span>Bolos no pote</span><span>•</span><span>Annie Truffé</span><span>•</span><span>Salgados</span><span>•</span><span>Cafés</span><span>•</span><span>Kits festa</span><span>•</span></div></div>
 
       <section class="trust-strip" aria-label="Diferenciais da Annie Cake Shop">
         <div class="container trust-grid">
-          <div class="trust-item"><span class="trust-icon">✦</span><div><strong>Doces autorais</strong><small>feitos para encantar</small></div></div>
-          <div class="trust-item"><span class="trust-icon">♡</span><div><strong>Clima aconchegante</strong><small>chegue e fique à vontade</small></div></div>
-          <div class="trust-item"><span class="trust-icon">✧</span><div><strong>Peça do seu jeito</strong><small>loja, delivery ou encomenda</small></div></div>
+          <div class="trust-item"><span class="trust-icon"><svg class="ico" aria-hidden="true"><use href="#i-sparkle"/></svg></span><div><strong>Doces autorais</strong><small>feitos para encantar</small></div></div>
+          <div class="trust-item"><span class="trust-icon"><svg class="ico" aria-hidden="true"><use href="#i-heart"/></svg></span><div><strong>Clima aconchegante</strong><small>chegue e fique à vontade</small></div></div>
+          <div class="trust-item"><span class="trust-icon"><svg class="ico" aria-hidden="true"><use href="#i-gift"/></svg></span><div><strong>Peça do seu jeito</strong><small>loja, delivery ou encomenda</small></div></div>
         </div>
       </section>
 
@@ -87,12 +94,11 @@
         <div class="container">
           <div class="section-heading reveal">
             <div><div class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> escolha seu momento</div><h2 id="menu-title">Cardápio <em>da casa</em></h2></div>
-            <p>Nosso cardápio real está sendo preparado com carinho. Os itens abaixo são <strong>exemplos editáveis</strong> para você visualizar a experiência.</p>
+            <p>Picolés trufados, almoços, salgados, doces e muito mais. Escolha a categoria e toque em “Pedir” para finalizar no cardápio online.</p>
           </div>
           <div class="menu-tabs" id="menu-tabs" role="tablist" aria-label="Categorias do cardápio"></div>
-          <div class="menu-feedback" id="menu-feedback" role="status" aria-live="polite"></div>
           <div class="menu-grid" id="menu-grid"></div>
-          <div class="menu-footnote"><span class="example-chip">[exemplo]</span> itens e valores demonstrativos — confirme disponibilidade e preço pelo WhatsApp.</div>
+          <div class="menu-footnote"><a class="button button-primary" data-order href="#">Ver cardápio completo e preços <span aria-hidden="true">↗</span></a></div>
         </div>
       </section>
 
@@ -100,10 +106,10 @@
         <div class="container">
           <div class="section-heading centered reveal"><div class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> do seu jeito</div><h2 id="order-title">Como pedir sua <em>dose de carinho</em></h2><p>Escolha o caminho mais gostoso para receber a Annie Cake Shop.</p></div>
           <div class="order-grid">
-            <a class="order-card order-card-main reveal" data-order href="#"><span class="order-number">01</span><span class="order-icon">↗</span><h3>Peça online</h3><p>Monte sua sacola no cardápio online, com entrega e programa de cashback.</p><span class="order-link">Abrir cardápio <span aria-hidden="true">→</span></span></a>
-            <a class="order-card reveal reveal-delay" data-ifood href="#"><span class="order-number">02</span><span class="order-icon">✣</span><h3>Peça no iFood</h3><p>Prefere o app de sempre? Peça a entrega direto pelo iFood.</p><span class="order-link">Ver no iFood <span aria-hidden="true">→</span></span></a>
-            <a class="order-card reveal reveal-delay-2" data-whatsapp data-message="Olá! Vim pelo site e gostaria de fazer uma encomenda na Annie Cake Shop." href="#"><span class="order-number">03</span><span class="order-icon">◔</span><h3>Encomendas e dúvidas</h3><p>Bolos, kits festa e pedidos sob medida: fale direto com a gente.</p><span class="order-link">Abrir conversa <span aria-hidden="true">→</span></span></a>
-            <a class="order-card reveal reveal-delay-2" data-phone href="#"><span class="order-number">04</span><span class="order-icon">⌕</span><h3>Ligue para a loja</h3><p>Prefere conversar? Nosso time está pronto para te atender.</p><span class="order-link">(81) 99680-3230 <span aria-hidden="true">→</span></span></a>
+            <a class="order-card order-card-main reveal" data-order href="#"><span class="order-number">01</span><span class="order-icon"><svg class="ico" aria-hidden="true"><use href="#i-bag"/></svg></span><h3>Peça online</h3><p>Monte sua sacola no cardápio online, com entrega e programa de cashback.</p><span class="order-link">Abrir cardápio <span aria-hidden="true">→</span></span></a>
+            <a class="order-card reveal reveal-delay" data-ifood href="#"><span class="order-number">02</span><span class="order-icon"><svg class="ico" aria-hidden="true"><use href="#i-bike"/></svg></span><h3>Peça no iFood</h3><p>Prefere o app de sempre? Peça a entrega direto pelo iFood.</p><span class="order-link">Ver no iFood <span aria-hidden="true">→</span></span></a>
+            <a class="order-card reveal reveal-delay-2" data-whatsapp data-message="Olá! Vim pelo site e gostaria de fazer uma encomenda na Annie Cake Shop." href="#"><span class="order-number">03</span><span class="order-icon"><svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg></span><h3>Encomendas e dúvidas</h3><p>Bolos, kits festa e pedidos sob medida: fale direto com a gente.</p><span class="order-link">Abrir conversa <span aria-hidden="true">→</span></span></a>
+            <a class="order-card reveal reveal-delay-2" data-phone href="#"><span class="order-number">04</span><span class="order-icon"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg></span><h3>Ligue para a loja</h3><p>Prefere conversar? Nosso time está pronto para te atender.</p><span class="order-link">(81) 99680-3230 <span aria-hidden="true">→</span></span></a>
           </div>
         </div>
       </section>
@@ -111,14 +117,14 @@
       <section class="encomenda-section section-pad" aria-labelledby="encomenda-title">
         <div class="container encomenda-card reveal">
           <div class="encomenda-copy"><div class="eyebrow light"><span class="eyebrow-line" aria-hidden="true"></span> para celebrar bonito</div><h2 id="encomenda-title">Tem uma ocasião especial?</h2><p>Montamos encomendas e kits festa com aquele toque Annie que transforma qualquer encontro em memória gostosa.</p><a class="button button-light" data-whatsapp data-message="Olá! Gostaria de fazer uma encomenda ou conhecer os kits festa da Annie Cake Shop." href="#">Falar sobre minha encomenda <span aria-hidden="true">↗</span></a></div>
-          <div class="encomenda-art" aria-hidden="true"><div class="cake-doodle"><span>✦</span><div class="doodle-cake"><i></i><i></i><i></i></div><span>♡</span></div><p>feito para<br /><strong>comemorar</strong></p></div>
+          <div class="encomenda-art" aria-hidden="true"><div class="cake-doodle"><span>•</span><div class="doodle-cake"><i></i><i></i><i></i></div><span><svg class="ico" aria-hidden="true"><use href="#i-heart"/></svg></span></div><p>feito para<br /><strong>comemorar</strong></p></div>
         </div>
       </section>
 
       <section class="about-section section-pad" id="sobre" aria-labelledby="about-title">
         <div class="container about-grid">
-          <div class="about-images reveal"><div class="about-image about-image-tall"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=85" alt="Bolo decorado, imagem demonstrativa" loading="lazy" /><span class="image-note">imagem demonstrativa</span></div><div class="about-image about-image-small"><img src="https://images.unsplash.com/photo-1519915028121-7d3463d20b13?auto=format&fit=crop&w=700&q=85" alt="Mesa com doces e café, imagem demonstrativa" loading="lazy" /></div><span class="about-seal">desde<br /><strong>sempre</strong></span></div>
-          <div class="about-copy reveal reveal-delay"><div class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> um pouquinho da gente</div><h2 id="about-title">A Annie é feita de <em>detalhes.</em></h2><p>Tem o cheiro de bolo saindo do forno, a mesa que convida a ficar mais um pouquinho e aquele cuidado que transforma uma pausa qualquer em um momento especial.</p><p>Esta história é um texto-base editável para a marca. Conte aqui a origem da Annie Cake Shop, o carinho pela unidade de Piedade e tudo o que faz a sua loja ser única.</p><div class="about-highlights"><div><span>01</span><strong>ambiente acolhedor</strong><small>um cantinho cor-de-rosa para adoçar o dia</small></div><div><span>02</span><strong>Annie Truffé</strong><small>o carrinho de picolés trufados da casa</small></div></div><a class="text-link" href="#galeria">Conheça a nossa atmosfera <span aria-hidden="true">↗</span></a></div>
+          <div class="about-images reveal"><div class="about-image about-image-tall"><img src="img/picole-chocolate-cremoso.jpg" alt="Picolé trufado de chocolate ao leite com recheio cremoso" loading="lazy" /></div><div class="about-image about-image-small"><img src="img/cookie.jpg" alt="Cookie grande da Annie Cake Shop, sobre o prato da marca" loading="lazy" /></div><span class="about-seal">desde<br /><strong>sempre</strong></span></div>
+          <div class="about-copy reveal reveal-delay"><div class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> um pouquinho da gente</div><h2 id="about-title">A Annie é feita de <em>detalhes.</em></h2><p>Tem o cheiro de bolo saindo do forno, a mesa que convida a ficar mais um pouquinho e aquele cuidado que transforma uma pausa qualquer em um momento especial.</p><p>Na unidade de Piedade, doces, salgados e kits festa feitos para adoçar o seu dia e as suas comemorações.</p><div class="about-highlights"><div><span>01</span><strong>ambiente acolhedor</strong><small>um cantinho cor-de-rosa para adoçar o dia</small></div><div><span>02</span><strong>Annie Truffé</strong><small>o carrinho de picolés trufados da casa</small></div></div><a class="text-link" href="#galeria">Conheça a nossa atmosfera <span aria-hidden="true">↗</span></a></div>
         </div>
       </section>
 
@@ -126,39 +132,44 @@
         <div class="container">
           <div class="section-heading reveal"><div><div class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> um feed para salvar</div><h2 id="gallery-title">Olha que <em>coisa linda</em></h2></div><a class="instagram-link" href="https://www.instagram.com/anniecakeshop/" target="_blank" rel="noreferrer">@anniecakeshop <span aria-hidden="true">↗</span></a></div>
           <div class="gallery-grid">
-            <figure class="gallery-item gallery-item-wide reveal"><img src="https://images.unsplash.com/photo-1557979619-445218f326b9?auto=format&fit=crop&w=1000&q=85" alt="Fatia de bolo com cobertura, imagem demonstrativa" loading="lazy" /><figcaption>imagem demonstrativa · bolos</figcaption></figure>
-            <figure class="gallery-item reveal reveal-delay"><img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=700&q=85" alt="Cookies artesanais, imagem demonstrativa" loading="lazy" /><figcaption>imagem demonstrativa · doces</figcaption></figure>
-            <figure class="gallery-item reveal reveal-delay-2"><img src="https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?auto=format&fit=crop&w=700&q=85" alt="Picolés coloridos, imagem demonstrativa" loading="lazy" /><figcaption>imagem demonstrativa · Annie Truffé</figcaption></figure>
+            <figure class="gallery-item gallery-item-wide reveal"><img src="img/picole-morango.jpg" alt="Picolé trufado de chocolate branco com recheio de morango" loading="lazy" /><figcaption>Truffé Pavlove</figcaption></figure>
+            <figure class="gallery-item reveal reveal-delay"><img src="img/cookie.jpg" alt="Cookie grande da Annie Cake Shop, sobre o prato da marca" loading="lazy" /><figcaption>Cookie Lemon Nuts</figcaption></figure>
+            <figure class="gallery-item reveal reveal-delay-2"><img src="img/picole-limao.jpg" alt="Picolé trufado de chocolate branco e limão cortado ao meio" loading="lazy" /><figcaption>Truffé Tortinha de Limão</figcaption></figure>
+            <figure class="gallery-item gallery-item-wide reveal"><img src="img/picole-chocolate-fruta.jpg" alt="Picolé trufado de chocolate com fios de chocolate branco e recheio vermelho de frutas" loading="lazy" /><figcaption>Truffé Franuí</figcaption></figure>
+            <figure class="gallery-item reveal reveal-delay"><img src="img/picole-branco-dourado.jpg" alt="Picolé trufado de chocolate branco cortado ao meio, com recheio dourado" loading="lazy" /><figcaption>Truffé Pudim</figcaption></figure>
+            <figure class="gallery-item reveal reveal-delay-2"><img src="img/picole-branco-geleia.jpg" alt="Picolé trufado de chocolate branco com recheio de geleia vermelha" loading="lazy" /><figcaption>Truffé Bolo de Rolo</figcaption></figure>
           </div>
-          <div class="gallery-note"><span>✦</span> fotos reais da loja e dos produtos entram aqui em breve <span>✦</span></div>
+          <div class="gallery-note"><span>•</span> fotos reais da loja e dos produtos entram aqui em breve <span>•</span></div>
         </div>
       </section>
 
       <section class="reviews-section section-pad" aria-labelledby="reviews-title">
-        <div class="container reviews-layout">
-          <div class="reviews-intro reveal"><div class="eyebrow light"><span class="eyebrow-line" aria-hidden="true"></span> carinho que volta</div><h2 id="reviews-title">Quem prova,<br /><em>conta.</em></h2><p>Depoimentos de exemplo para substituir pelas avaliações reais dos clientes da Annie.</p><a class="button button-light button-small" data-google-review href="#">Avalie no Google <span aria-hidden="true">↗</span></a></div>
-          <div class="reviews-list" id="reviews-list"></div>
+        <div class="container reviews-solo reveal">
+          <div class="eyebrow light"><span class="eyebrow-line" aria-hidden="true"></span> carinho que volta</div>
+          <h2 id="reviews-title">Já provou?<br /><em>Conta pra gente.</em></h2>
+          <p>Sua avaliação no Google ajuda mais gente a conhecer a Annie Cake Shop.</p>
+          <a class="button button-light" data-google-review href="#">Avalie no Google <span aria-hidden="true">↗</span></a>
         </div>
       </section>
 
       <section class="location-section section-pad" aria-labelledby="location-title">
         <div class="container location-grid">
           <div class="location-map reveal"><iframe title="Mapa de localização da Annie Cake Shop em Piedade" loading="lazy" src="https://www.google.com/maps?q=R.%20Jo%C3%A3o%20Dourado%20Filho%2C%201131%2C%20Piedade%2C%20Jaboat%C3%A3o%20dos%20Guararapes%2C%20PE&output=embed"></iframe></div>
-          <div class="location-copy reveal reveal-delay"><div class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> vem tomar um café</div><h2 id="location-title">A gente te espera em <em>Piedade.</em></h2><address>R. João Dourado Filho, 1131<br />Piedade, Jaboatão dos Guararapes – PE<br />54400-150</address><div class="location-actions"><a class="button button-primary button-small" data-maps href="#">Abrir no Google Maps <span aria-hidden="true">↗</span></a><a class="button button-outline button-small" data-route href="#">Traçar rota <span aria-hidden="true">↗</span></a><a class="waze-link" data-waze href="#">Abrir no Waze <span aria-hidden="true">↗</span></a></div><div class="hours-box"><div><span>horários</span><strong>Seg a Sex <b>11h–20h</b></strong><strong>Sáb e Dom <b>11h–21h</b></strong></div><span class="hours-flower" aria-hidden="true">✳</span></div></div>
+          <div class="location-copy reveal reveal-delay"><div class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> vem tomar um café</div><h2 id="location-title">A gente te espera em <em>Piedade.</em></h2><address>R. João Dourado Filho, 1131<br />Piedade, Jaboatão dos Guararapes – PE<br />54400-150</address><div class="location-actions"><a class="button button-primary button-small" data-maps href="#">Abrir no Google Maps <span aria-hidden="true">↗</span></a><a class="button button-outline button-small" data-route href="#">Traçar rota <span aria-hidden="true">↗</span></a><a class="waze-link" data-waze href="#">Abrir no Waze <span aria-hidden="true">↗</span></a></div><div class="hours-box"><div><span>horários</span><strong>Seg a Sex <b>11h–20h</b></strong><strong>Sáb e Dom <b>11h–21h</b></strong></div><span class="hours-flower" aria-hidden="true"><svg class="ico" aria-hidden="true"><use href="#i-sparkle"/></svg></span></div></div>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="container footer-grid">
-        <div class="footer-brand"><a class="brand brand-footer" href="#inicio" aria-label="Voltar ao início"><span class="brand-mark" aria-hidden="true"><span>ACS</span></span><span class="brand-copy"><strong>ANNIE</strong><small>CAKE SHOP</small></span></a><p>Uma experiência única<br />em cada doce.</p></div>
+        <div class="footer-brand"><a class="brand brand-footer" href="#inicio" aria-label="Voltar ao início"><img class="brand-logo" src="logo-annie.png" alt="Annie Cake Shop" width="58" height="58" /></a><p>Uma experiência única<br />em cada doce.</p></div>
         <div class="footer-column"><span class="footer-label">fala com a gente</span><a data-whatsapp data-message="Olá! Vim pelo site e gostaria de falar com a Annie Cake Shop." href="#">WhatsApp</a><a data-phone href="#">(81) 99680-3230</a><a href="https://www.instagram.com/anniecakeshop/" target="_blank" rel="noreferrer">@anniecakeshop</a></div>
         <div class="footer-column"><span class="footer-label">visite a loja</span><address>R. João Dourado Filho, 1131<br />Piedade · Jaboatão dos Guararapes</address><span>Seg a Sex 11h–20h<br />Sáb e Dom 11h–21h</span></div>
       </div>
       <div class="container footer-bottom"><span>© <span id="current-year"></span> Annie Cake Shop. Todos os direitos reservados.</span><span>feito com açúcar, afeto e café</span></div>
     </footer>
 
-    <a class="floating-whatsapp" data-whatsapp data-message="Olá! Vim pelo site e gostaria de falar com a Annie Cake Shop." href="#" aria-label="Falar pelo WhatsApp"><span aria-hidden="true">◔</span><span>fale conosco</span></a>
+    <a class="floating-whatsapp" data-whatsapp data-message="Olá! Vim pelo site e gostaria de falar com a Annie Cake Shop." href="#" aria-label="Falar pelo WhatsApp"><span aria-hidden="true"><svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg></span><span>fale conosco</span></a>
     <dialog class="lightbox" id="lightbox" aria-label="Foto ampliada"><figure><img alt="" /><figcaption></figcaption></figure><button type="button" class="lb-btn lb-close" data-close aria-label="Fechar">×</button><button type="button" class="lb-btn lb-prev" data-prev aria-label="Foto anterior">‹</button><button type="button" class="lb-btn lb-next" data-next aria-label="Próxima foto">›</button></dialog>
     <script src="menu-data.js"></script>
     <script src="app.js"></script>

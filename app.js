@@ -14,13 +14,6 @@ const STORE_CONFIG = {
   }
 };
 
-const REVIEWS = [
-  { quote: '“O cantinho mais gostoso para adoçar a tarde. Tudo caprichado e o atendimento é um carinho só!”', name: 'Cliente exemplo', initial: 'C' },
-  { quote: '“Os doces são lindos, mas o sabor consegue ser ainda melhor. Já quero voltar para provar tudo.”', name: 'Cliente exemplo', initial: 'A' },
-  { quote: '“Pedi para uma comemoração e foi um sucesso. A Annie entendeu exatamente o que eu imaginava.”', name: 'Cliente exemplo', initial: 'M' },
-  { quote: '“Ambiente acolhedor, café gostoso e aquela sobremesa que melhora qualquer dia.”', name: 'Cliente exemplo', initial: 'R' }
-];
-
 function whatsappLink(message) {
   return `https://wa.me/${STORE_CONFIG.phoneDigits}?text=${encodeURIComponent(message)}`;
 }
@@ -64,7 +57,7 @@ function renderMenu() {
     tab.type = 'button';
     tab.setAttribute('role', 'tab');
     tab.setAttribute('aria-selected', String(index === 0));
-    tab.innerHTML = `<span class="menu-tab-icon" aria-hidden="true">${group.icon}</span>${group.category}`;
+    tab.textContent = group.category;
     tab.addEventListener('click', () => selectTab(index));
     tab.addEventListener('keydown', (e) => {
       if (!['ArrowRight', 'ArrowLeft'].includes(e.key)) return;
@@ -87,17 +80,16 @@ function renderMenuItems(gi) {
   const grid = document.querySelector('#menu-grid');
   const group = MENU_DATA[gi];
   if (!grid || !group) return;
+  grid.className = 'menu-list';
   grid.innerHTML = group.items.map((item, i) => `
-    <article class="menu-card" style="--i:${i}">
-      <div class="menu-card-image">
-        <img src="${item.image}" alt="${item.alt}" loading="lazy" />
-        ${item.isExample ? '<span class="menu-badge">[exemplo]</span>' : ''}
-      </div>
-      <div class="menu-card-body">
+    <article class="menu-item" style="--i:${i}">
+      <div class="menu-item-text">
+        ${item.badge ? `<span class="menu-badge">${item.badge}</span>` : ''}
         <h3>${item.name}</h3>
-        <p>${item.description}</p>
-        <div class="menu-card-foot"><span class="menu-price">${item.price}</span><a class="menu-add" href="${STORE_CONFIG.cardapioWebUrl}" target="_blank" rel="noreferrer">Pedir online <span aria-hidden="true">↗</span></a></div>
+        ${item.description ? `<p>${item.description}</p>` : ''}
+        <div class="menu-item-foot"><span class="menu-price">${item.price}</span><a class="menu-add" href="${STORE_CONFIG.cardapioWebUrl}" target="_blank" rel="noreferrer">Pedir <span aria-hidden="true">↗</span></a></div>
       </div>
+      <img src="${item.image}" alt="${item.alt}" width="104" height="104" loading="lazy" />
     </article>`).join('');
 }
 
@@ -167,18 +159,6 @@ function setupLightbox() {
   dialog.addEventListener('keydown', (e) => { if (e.key === 'ArrowRight') show(idx + 1); if (e.key === 'ArrowLeft') show(idx - 1); });
 }
 
-function renderReviews() {
-  const list = document.querySelector('#reviews-list');
-  if (!list) return;
-  list.innerHTML = REVIEWS.map((review) => `
-    <article class="review-card reveal">
-      <div class="review-stars" aria-label="5 estrelas">★★★★★</div>
-      <blockquote>${review.quote}</blockquote>
-      <cite><span class="review-avatar" aria-hidden="true">${review.initial}</span>${review.name}</cite>
-    </article>
-  `).join('');
-}
-
 function setupNavigation() {
   const toggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('#site-nav');
@@ -241,7 +221,6 @@ function init() {
   setConfiguredLinks();
   renderOpenStatus();
   renderMenu();
-  renderReviews();
   setupNavigation();
   addLocalBusinessSchema();
   document.querySelector('#current-year').textContent = new Date().getFullYear();

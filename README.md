@@ -42,5 +42,9 @@ As imagens atuais são demonstrativas e carregadas de URLs públicas do Unsplash
 - **Cabeçalho vivo:** barra de progresso de rolagem, sombra ao rolar e destaque do menu conforme a seção visível.
 - **Hero:** a foto inclina de leve com o mouse; o selo e a estrela têm movimento sutil. Faixa em rolagem com as categorias da casa.
 - **Galeria:** clique para ampliar, com setas e teclado (← → Esc).
-- **Abas do cardápio:** troca animada e navegação por teclado (← →).
+- **Fotos:** ficam em `img/`. Para trocar uma foto do cardápio, edite `image` no `menu-data.js`.
 - Todas as animações respeitam `prefers-reduced-motion`.
+
+## Cardápio
+
+Os itens e valores ficam em `menu-data.js` e as fotos em `img/produtos/`. Os valores foram copiados do cardápio online e **não atualizam sozinhos**: se mudarem lá, edite o `price` aqui.
